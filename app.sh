@@ -1,7 +1,7 @@
 ### P7ZIP ###
 _build_p7zip() {
 local VERSION="v17.05"
-local FOLDER="p7zip_${VERSION}"
+local FOLDER="${VERSION}"
 local FILE="${VERSION}.tar.gz"
 local URL="https://github.com/p7zip-project/p7zip/archive/refs/tags/${FILE}"
 
