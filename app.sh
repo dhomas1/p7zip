@@ -1,11 +1,11 @@
 ### P7ZIP ###
 _build_p7zip() {
-local VERSION="16.02"
+local VERSION="v17.05"
 local FOLDER="p7zip_${VERSION}"
-local FILE="${FOLDER}_src_all.tar.bz2"
-local URL="http://sourceforge.net/projects/p7zip/files/p7zip/${VERSION}/${FILE}"
+local FILE="${VERSION}.tar.gz"
+local URL="https://github.com/p7zip-project/p7zip/archive/refs/tags/${FILE}"
 
-_download_bz2 "${FILE}" "${URL}" "${FOLDER}"
+_download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd "target/${FOLDER}"
 cp makefile.linux_cross_arm makefile.linux
 make all3 CC="${CC} \$(ALLFLAGS)" CXX="${CXX} \$(ALLFLAGS)" OPTFLAGS="${CFLAGS}"
